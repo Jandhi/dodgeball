@@ -207,11 +207,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &564411123 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6067185611458288480, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
-  m_PrefabInstance: {fileID: 1308604489}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &672847310
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,28 +365,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &677229463 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3016754647537666452, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
-  m_PrefabInstance: {fileID: 1308604489}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &677229466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 677229463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 278536d66d56340949dccad94f6eb3b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Renderers:
-  - {fileID: 564411123}
-  - {fileID: 1627117947}
-  TimeToAppear: 0.1
-  TimeToDisappear: 0.1
 --- !u!1 &1036015879
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,17 +781,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3015047124019857764, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
-      propertyPath: maxLength
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015047124019857764, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
-      propertyPath: baseHeadOffset
-      value: -0.497
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015047124019857764, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
-      propertyPath: baseLineOffset
-      value: -0.3777
+    - target: {fileID: 2603011552829858868, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
+      propertyPath: timeToFullCharge
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6956645678473780846, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
       propertyPath: m_Name
@@ -867,16 +832,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3016754647537666452, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 677229466}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
---- !u!212 &1627117947 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 2583710098179719755, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
-  m_PrefabInstance: {fileID: 1308604489}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1710349927
 GameObject:
   m_ObjectHideFlags: 0

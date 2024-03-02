@@ -44,7 +44,7 @@ public class Movement : MonoBehaviour
 		afterImage = GetComponentInChildren<ParticleSystem>();
 
 		reticlePivot = transform.FindLogged("ReticlePivot");
-		_thrower = GetComponent<Thrower>();\
+		_thrower = GetComponent<Thrower>();
 
 		lastMoveInput = Vector2.right;
     }
