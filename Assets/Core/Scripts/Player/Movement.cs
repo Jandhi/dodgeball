@@ -22,15 +22,15 @@ public class Movement : MonoBehaviour
 	[SerializeField] float dashDuration;
 	[PropertyTooltip("The easing of the dash.")]
 	[SerializeField] AnimationCurve dashCurve;
+	[Header("Visuals")]
+	[SerializeField] GameObject DashDustPrefab;
+	ParticleSystem afterImage;
 
-	
-	
 	Transform reticlePivot;
 	float currentSpeed;
 	Quaternion inputRotation;
 	Rigidbody2D rb;
-	Vector2 moveInput, moveVector, aimInput, lookVector;
-	bool dashing;
+	Vector2 moveInput, lastMoveInput, moveVector, aimInput, lookVector;
 	IEnumerator DashSequence;
 
 	private Thrower _thrower;
@@ -41,23 +41,28 @@ public class Movement : MonoBehaviour
     {
 		rb = GetComponentInChildren<Rigidbody2D>();
 		currentSpeed = maxSpeed;
+		afterImage = GetComponentInChildren<ParticleSystem>();
 
 		reticlePivot = transform.FindLogged("ReticlePivot");
-		_thrower = GetComponent<Thrower>();
+		_thrower = GetComponent<Thrower>();\
+
+		lastMoveInput = Vector2.right;
     }
 
 	public void OnMovement(InputValue value)
 	{
 		moveInput = value.Get<Vector2>();
+		// we save the last known movement for dashes
+		lastMoveInput = moveInput != Vector2.zero ? moveInput : lastMoveInput;
 	}
 
 	public void OnDash()
 	{
-		Debug.Log("Dash pressed");
-		// dashes are not interruptible
+		// dashes are not interruptible with more dashes.
 		if (DashSequence != null) return;
 
-		dashing = true;
+		Instantiate(DashDustPrefab, transform.position, Quaternion.identity);
+		afterImage.Play();
 		DashSequence = Dash();
 		StartCoroutine(DashSequence);
 	}
@@ -69,7 +74,8 @@ public class Movement : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		if (!dashing) DoMovement();
+		// if there is no ongoing dash, move
+		if (DashSequence == null) DoMovement();
 		DoAim();
 	}
 
@@ -105,7 +111,7 @@ public class Movement : MonoBehaviour
 	void DoMovement()
     {
 		// calculate movement
-		moveVector = moveInput * currentSpeed;
+		moveVector = (Vector2.ClampMagnitude(moveInput, 1)) * currentSpeed;
 
 		// apply velocity
 		rb.velocity = moveVector;
@@ -113,12 +119,12 @@ public class Movement : MonoBehaviour
 
 	IEnumerator Dash()
 	{
-		// get movement vector
-		Vector2 dashDir = moveInput.normalized * dashLength;
+		// get movement vector from last movement
+		Vector2 dashDir = lastMoveInput.normalized * dashLength;
 
 		// get start and end position of this dash
 		Vector2 startPos = rb.position;
-		Vector2 endPos = rb.position + dashDir;
+		Vector2 endPos = startPos + dashDir;
 
 		// evaluate dash motion
 		Vector2 lastPos = startPos;
@@ -139,7 +145,6 @@ public class Movement : MonoBehaviour
 		}
 
 		// dash is now completed.
-		dashing = false;
 		DashSequence = null;
 	}
 }

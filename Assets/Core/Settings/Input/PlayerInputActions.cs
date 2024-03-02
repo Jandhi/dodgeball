@@ -180,7 +180,19 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""Gameplay Control Scheme"",
+            ""bindingGroup"": ""Gameplay Control Scheme"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<XInputController>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
@@ -306,6 +318,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         }
     }
     public GameplayActions @Gameplay => new GameplayActions(this);
+    private int m_GameplayControlSchemeSchemeIndex = -1;
+    public InputControlScheme GameplayControlSchemeScheme
+    {
+        get
+        {
+            if (m_GameplayControlSchemeSchemeIndex == -1) m_GameplayControlSchemeSchemeIndex = asset.FindControlSchemeIndex("Gameplay Control Scheme");
+            return asset.controlSchemes[m_GameplayControlSchemeSchemeIndex];
+        }
+    }
     public interface IGameplayActions
     {
         void OnThrow(InputAction.CallbackContext context);
