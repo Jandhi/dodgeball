@@ -7,9 +7,9 @@ public class Movement : MonoBehaviour
 {
 	[Header("Movement Metrics")]
 	[PropertyTooltip("Max speed under normal circumstances.")]
-	public float maxSpeed = 3f;
+	[SerializeField] float maxSpeed = 3f;
 	[PropertyTooltip("Max speed while slowed.")]
-	public float slowedSpeed = 1.5f;
+	[SerializeField] float slowedSpeed = 1.5f;
 
 	Transform reticlePivot;
 
