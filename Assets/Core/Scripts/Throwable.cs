@@ -7,27 +7,10 @@ using Random = UnityEngine.Random;
 
 public class Throwable : MonoBehaviour
 {
-    public float Force;
-    private Rigidbody2D _rigidbody;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        _rigidbody = GetComponent<Rigidbody2D>();
-    }
+    [SerializeField] private GameObject projectilePrefab;
 
-    // Update is called once per frame
-    void Update()
+    void Throw(Vector2 force, Vector3 playerPosition)
     {
-        
-    }
-
-    [Button]
-    void SendIt()
-    {
-
-        var rotation = Random.Range(0f, Mathf.PI * 2f);
-        
-        _rigidbody.AddForce(new Vector2(Mathf.Cos(rotation), Mathf.Sin(rotation)) * Force);
+        Instantiate(projectilePrefab, playerPosition, Quaternion.identity);
     }
 }

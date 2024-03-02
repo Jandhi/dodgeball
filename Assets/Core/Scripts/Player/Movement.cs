@@ -4,6 +4,7 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using Sirenix.OdinInspector.Editor.Examples;
 using System;
+using Core.Scripts.Utils;
 using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
@@ -22,6 +23,8 @@ public class Movement : MonoBehaviour
 	[PropertyTooltip("The easing of the dash.")]
 	[SerializeField] AnimationCurve dashCurve;
 
+	
+	
 	Transform reticlePivot;
 	float currentSpeed;
 	Quaternion inputRotation;
@@ -30,15 +33,17 @@ public class Movement : MonoBehaviour
 	bool dashing;
 	IEnumerator DashSequence;
 
+	private Thrower _thrower;
+	
+
     // Start is called before the first frame update
     void Start()
     {
 		rb = GetComponentInChildren<Rigidbody2D>();
 		currentSpeed = maxSpeed;
 
-		reticlePivot = transform.Find("ReticlePivot");
-		if (reticlePivot == null)
-			Debug.LogError("No reticle pivot object foumd");
+		reticlePivot = transform.FindLogged("ReticlePivot");
+		_thrower = GetComponent<Thrower>();
     }
 
 	public void OnMovement(InputValue value)
@@ -81,16 +86,20 @@ public class Movement : MonoBehaviour
 			}
 			// otherwise maintain our aim as the last input. Do hide the reticle tho
 			reticlePivot.gameObject.SetActive(false);
+			
+			_thrower.ReleaseAim();
 		}
 		else
 		{
-			reticlePivot.gameObject.SetActive(true);
 			lookVector = aimInput;
+			reticlePivot.gameObject.SetActive(true);
+			_thrower.AddTimeAimed(Time.deltaTime);
 		}
 
 		// rotate the reticle to point in the aim direction
 		inputRotation = Quaternion.Euler(Vector3.forward * (Mathf.Atan2(lookVector.y, lookVector.x) * Mathf.Rad2Deg));
 		reticlePivot.transform.rotation = inputRotation;
+		_thrower.SetRotation(inputRotation);
 	}
 
 	void DoMovement()
