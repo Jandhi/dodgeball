@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7277713402596856503}
   - component: {fileID: -8831239759100861951}
   m_Layer: 0
-  m_Name: PhysicsTriangle
+  m_Name: Book Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.21, y: -0.18, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0.8980393, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ef4cb11dd4e244ff1a10eb6636014e74, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -151,8 +151,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -160,10 +160,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
+    - - {x: 0.95912564, y: -0.552309}
+      - {x: 0.9493705, y: 1.5048747}
+      - {x: 0.4722662, y: 1.8247311}
+      - {x: -0.97885895, y: 1.0427178}
+      - {x: -0.9667816, y: -0.3751077}
+      - {x: -0.9815686, y: -1.1787862}
+      - {x: -0.90034425, y: -1.3086703}
+      - {x: -0.48542738, y: -1.3835859}
   m_UseDelaunayMesh: 0
 --- !u!114 &-8759111299262354278
 MonoBehaviour:

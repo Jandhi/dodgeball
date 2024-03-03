@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Core.Scripts.Utils;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ThrowPointer : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class ThrowPointer : MonoBehaviour
     [SerializeField] private float maxLength;
     [SerializeField] private float baseLineOffset;
     [SerializeField] private float baseHeadOffset;
+    [SerializeField] private float lineScalingRatio;
 
     private Transform _square;
     private Transform _triangle;
@@ -27,7 +30,7 @@ public class ThrowPointer : MonoBehaviour
     {
         var size = Mathf.Lerp(minLength, maxLength, percent);
         var amountBigger = size - minLength;
-        var addedOffset = -amountBigger / 2;
+        var addedOffset = -amountBigger / 2 * lineScalingRatio;
 
         var localScale = _square.localScale;
         localScale = new Vector3(localScale.x, size, localScale.z);
