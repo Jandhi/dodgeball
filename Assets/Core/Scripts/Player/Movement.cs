@@ -34,7 +34,6 @@ public class Movement : MonoBehaviour
 	IEnumerator DashSequence;
 
 	private Thrower _thrower;
-	
 
     // Start is called before the first frame update
     void Start()
@@ -91,7 +90,7 @@ public class Movement : MonoBehaviour
 				lookVector.y = moveInput.x;
 			}
 			// otherwise maintain our aim as the last input. Do hide the reticle tho
-			reticlePivot.gameObject.SetActive(false);
+			//reticlePivot.gameObject.SetActive(false);
 			
 			_thrower.ReleaseAim();
 		}
