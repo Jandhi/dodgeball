@@ -280,7 +280,7 @@
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gameplay Control Scheme",
+                    "groups": "",
                     "action": "Catch",
                     "isComposite": false,
                     "isPartOfComposite": false

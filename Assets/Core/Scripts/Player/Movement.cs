@@ -32,12 +32,19 @@ public class Movement : MonoBehaviour
 	Vector2 moveInput, lastMoveInput, moveVector;
 	IEnumerator DashSequence;
 
+	bool catching;
+	private Carrier _carrier;
+
     // Start is called before the first frame update
     void Awake()
     {
 		rb = GetComponentInChildren<Rigidbody2D>();
 		currentSpeed = maxSpeed;
 		afterImage = GetComponentInChildren<ParticleSystem>();
+
+		reticlePivot = transform.FindLogged("ReticlePivot");
+		_thrower = GetComponent<Thrower>();
+		_carrier = GetComponent<Carrier>();
 
 		lastMoveInput = Vector2.right;
     }
@@ -59,6 +66,23 @@ public class Movement : MonoBehaviour
 		DashSequence = Dash();
 		StartCoroutine(DashSequence);
 	}
+
+	public void OnThrow(InputValue value)
+	{
+		aimInput = value.Get<Vector2>();
+	}
+
+	public void OnCatch()
+    {
+        Debug.Log("OnCatch");
+        // set catching bool to be true, in catching mode can't dash ; can only catch when you have empty hands
+
+        bool emptyHands = _carrier.Throwable is null;
+        if (emptyHands) 
+        {
+			StartCoroutine(Catch());
+        }
+    }
 
 	private void FixedUpdate()
 	{
@@ -109,5 +133,22 @@ public class Movement : MonoBehaviour
 
 		// dash is now completed.
 		DashSequence = null;
+	}
+
+	IEnumerator Catch()
+	{
+		Debug.Log("Catch coroutine");
+		catching = true;
+		rb.drag = 40;
+
+		float time = 0;
+		while (time < 0.25)
+		{
+			time += Time.deltaTime;
+			Debug.Log("Catch coroutine in while");
+			yield return null;
+		}
+		catching = false;
+		rb.drag = 0;
 	}
 }
