@@ -13,6 +13,7 @@ public class Pickup : MonoBehaviour
     void Start()
     {
         _spawnable = GetComponent<Spawnable>();
+        _triggered = false;
     }
 
     // Update is called once per frame
@@ -26,6 +27,7 @@ public class Pickup : MonoBehaviour
         if(_triggered) return;
 
         var carrier = other.GetComponentInParent<Carrier>();
+        
         if (carrier is not null)
         {
             _triggered = true;

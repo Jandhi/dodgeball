@@ -520,6 +520,7 @@ GameObject:
   - component: {fileID: 2306336602544293642}
   - component: {fileID: 7081543803345509600}
   - component: {fileID: 2603011552829858868}
+  - component: {fileID: 7278771681604243477}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -585,7 +586,7 @@ MonoBehaviour:
     m_ActionId: e7207175-32af-4459-99ea-adaba101c58b
     m_ActionName: Gameplay/Dash
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Gameplay Control Scheme
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -669,8 +670,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c548a46f9a84e4962a701294c3be2576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minForce: 0
-  maxForce: 0
+  minForce: 10
+  maxForce: 50
   timeToFullCharge: 1.2
   chargeCurve:
     serializedVersion: 2
@@ -696,6 +697,19 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7278771681604243477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6956645678473780846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f9705fa2f6424eea9dbde9a57fb8009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Throwable: {fileID: 0}
 --- !u!1 &7309232157367507547
 GameObject:
   m_ObjectHideFlags: 0

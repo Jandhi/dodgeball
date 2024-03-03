@@ -9,8 +9,11 @@ public class Throwable : MonoBehaviour
 {
     [SerializeField] private GameObject projectilePrefab;
 
-    void Throw(Vector2 force, Vector3 playerPosition)
+    public void Throw(Vector2 force, Vector3 playerPosition)
     {
-        Instantiate(projectilePrefab, playerPosition, Quaternion.identity);
+        
+        var ball = Instantiate(projectilePrefab, playerPosition, Quaternion.identity);
+        ball.GetComponent<Rigidbody2D>().AddForce(force);
+        Destroy(this);
     }
 }

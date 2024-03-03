@@ -32,6 +32,7 @@ public class Movement : MonoBehaviour
 	Rigidbody2D rb;
 	Vector2 moveInput, lastMoveInput, moveVector, aimInput, lookVector;
 	IEnumerator DashSequence;
+	public Vector2 LookVector => lookVector;
 
 	private Thrower _thrower;
 	
@@ -112,7 +113,7 @@ public class Movement : MonoBehaviour
     {
 		// calculate movement
 		moveVector = (Vector2.ClampMagnitude(moveInput, 1)) * currentSpeed;
-
+		
 		// apply velocity
 		rb.velocity = moveVector;
 	}
