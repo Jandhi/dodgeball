@@ -50,7 +50,13 @@ public class Thrower : MonoBehaviour
         var force = Mathf.Lerp(minForce, maxForce, percent);
         var directionVector = -1 * _movement.LookVector.normalized;
         
-        throwable.Throw(force * directionVector, transform.position);
+        throwable.Throw(force * directionVector, transform.position + (directionVector * throwable.SpawnDistance).WithZ(0));
+
+        if (throwable.IsDone)
+        {
+            Carrier.Throwable = null;
+            Destroy(throwable.gameObject);
+        }
     }
 
     public void AddTimeAimed(float value)

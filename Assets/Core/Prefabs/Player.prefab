@@ -631,6 +631,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   DashDustPrefab: {fileID: 163708490253478009, guid: e70464f9eeaa24b4abf1e5b065fcc6e4, type: 3}
+  AimCutoff: 0.3
 --- !u!50 &7081543803345509600
 Rigidbody2D:
   serializedVersion: 4
@@ -670,8 +671,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c548a46f9a84e4962a701294c3be2576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minForce: 10
-  maxForce: 50
+  minForce: 250
+  maxForce: 1000
   timeToFullCharge: 1.2
   chargeCurve:
     serializedVersion: 2

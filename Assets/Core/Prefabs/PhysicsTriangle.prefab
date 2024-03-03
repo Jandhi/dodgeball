@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7093230273508838305}
   - component: {fileID: 5935094283087878368}
   - component: {fileID: 8092606933043244298}
+  - component: {fileID: -8759111299262354278}
+  - component: {fileID: 7277713402596856503}
   m_Layer: 0
   m_Name: PhysicsTriangle
   m_TagString: Untagged
@@ -99,7 +101,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: c80014eae4dcc4c6db4e785cc82b160d, type: 2}
@@ -162,3 +164,29 @@ PolygonCollider2D:
       - {x: 0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!114 &-8759111299262354278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212669605695433255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd794f7672c684b849f2566ddaa4d7aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Settings: {fileID: 11400000, guid: b1c7dc6ce898b46ffad3decf831c7bc7, type: 2}
+--- !u!114 &7277713402596856503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212669605695433255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623f8dca85c9042c08f0db9be63670cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lifetime: 10

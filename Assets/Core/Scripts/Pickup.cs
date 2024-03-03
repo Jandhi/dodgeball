@@ -22,21 +22,23 @@ public class Pickup : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if(_triggered) return;
 
         var carrier = other.GetComponentInParent<Carrier>();
+
+        if (carrier is null) return;
         
-        if (carrier is not null)
-        {
-            _triggered = true;
+        // Can't pick up if you have full hands
+        if(carrier.Throwable is not null) return;
             
-            var inHands = Instantiate(InHands, other.transform.parent);
+        _triggered = true;
             
-            _spawnable.Despawn();
-            inHands.GetComponent<Spawnable>().Spawn();
-            carrier.Throwable = inHands.GetComponent<Throwable>();
-        }
+        var inHands = Instantiate(InHands, other.transform.parent);
+            
+        _spawnable.Despawn();
+        inHands.GetComponent<Spawnable>().Spawn();
+        carrier.Throwable = inHands.GetComponent<Throwable>();
     }
 }

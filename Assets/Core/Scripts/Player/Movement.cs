@@ -6,6 +6,7 @@ using Sirenix.OdinInspector.Editor.Examples;
 using System;
 using Core.Scripts.Utils;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class Movement : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class Movement : MonoBehaviour
 	[SerializeField] GameObject DashDustPrefab;
 	ParticleSystem afterImage;
 
+	
 	Transform reticlePivot;
 	float currentSpeed;
 	Quaternion inputRotation;
@@ -33,6 +35,7 @@ public class Movement : MonoBehaviour
 	Vector2 moveInput, lastMoveInput, moveVector, aimInput, lookVector;
 	IEnumerator DashSequence;
 	public Vector2 LookVector => lookVector;
+	[FormerlySerializedAs("LookVectorCutoff")] public float AimCutoff;
 
 	private Thrower _thrower;
 
@@ -82,7 +85,7 @@ public class Movement : MonoBehaviour
 	void DoAim()
 	{
 		// if there is no aim input...
-		if (aimInput == Vector2.zero)
+		if (aimInput.magnitude < AimCutoff)
 		{
 			// if there is movement, use that (hide the reticle)
 			if (moveInput != Vector2.zero)
