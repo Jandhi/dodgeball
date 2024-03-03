@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Catch",
+                    "type": "Button",
+                    "id": "6c69ceb6-e13b-4d49-88ba-5441f43beed9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -267,12 +276,12 @@
                 },
                 {
                     "name": "",
-                    "id": "2661cfe6-a8f7-4d59-92d6-814aa15984cd",
-                    "path": "<HID::Logitech Logitech Dual Action>/button6",
+                    "id": "6e722180-4116-4a5e-8aef-12d6f09b0f7a",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gameplay Control Scheme",
-                    "action": "Dash",
+                    "action": "Catch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
