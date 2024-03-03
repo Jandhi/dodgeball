@@ -34,6 +34,7 @@ public class Movement : MonoBehaviour
 
 	bool catching;
 	private Carrier _carrier;
+	private SpriteRenderer _spriteR;
 
     // Start is called before the first frame update
     void Awake()
@@ -43,6 +44,7 @@ public class Movement : MonoBehaviour
 		afterImage = GetComponentInChildren<ParticleSystem>();
 
 		reticlePivot = transform.FindLogged("ReticlePivot");
+		_spriteR = gameObject.GetComponent<SpriteRenderer>();
 		_thrower = GetComponent<Thrower>();
 		_carrier = GetComponent<Carrier>();
 
@@ -137,18 +139,26 @@ public class Movement : MonoBehaviour
 
 	IEnumerator Catch()
 	{
-		Debug.Log("Catch coroutine");
 		catching = true;
 		rb.drag = 40;
+		_spriteR.color = Color.red;
 
 		float time = 0;
 		while (time < 0.25)
 		{
 			time += Time.deltaTime;
-			Debug.Log("Catch coroutine in while");
 			yield return null;
 		}
+		_spriteR.color = Color.white;
 		catching = false;
 		rb.drag = 0;
 	}
+	void OnCollisionEnter2D(Collision2D collision)
+    {
+		Debug.Log(collision.gameObject);
+		if (catching)
+		{
+			// ball is caught and ownership goes to this player now
+		}
+    }
 }
