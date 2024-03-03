@@ -11,11 +11,12 @@ public class Throwable : MonoBehaviour
     [SerializeField] private GameObject projectilePrefab;
     public bool IsDone = false;
 
-    public void Throw(Vector2 force, Vector3 position)
+    public void Throw(Vector2 force, Vector3 position, GameObject owner)
     {
-        
-        var ball = Instantiate(projectilePrefab, position, Quaternion.identity);
-        ball.GetComponent<Rigidbody2D>().AddForce(force);
-        IsDone = true;
-    }
+        BaseProjectile ball = Instantiate(projectilePrefab, position, Quaternion.identity).GetComponent<BaseProjectile>();
+
+        ball.Throw(force, owner);
+
+		Destroy(gameObject);
+	}
 }

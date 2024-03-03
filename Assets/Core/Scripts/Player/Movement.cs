@@ -27,27 +27,17 @@ public class Movement : MonoBehaviour
 	[SerializeField] GameObject DashDustPrefab;
 	ParticleSystem afterImage;
 
-	
-	Transform reticlePivot;
 	float currentSpeed;
-	Quaternion inputRotation;
 	Rigidbody2D rb;
-	Vector2 moveInput, lastMoveInput, moveVector, aimInput, lookVector;
+	Vector2 moveInput, lastMoveInput, moveVector;
 	IEnumerator DashSequence;
-	public Vector2 LookVector => lookVector;
-	[FormerlySerializedAs("LookVectorCutoff")] public float AimCutoff;
-
-	private Thrower _thrower;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
 		rb = GetComponentInChildren<Rigidbody2D>();
 		currentSpeed = maxSpeed;
 		afterImage = GetComponentInChildren<ParticleSystem>();
-
-		reticlePivot = transform.FindLogged("ReticlePivot");
-		_thrower = GetComponent<Thrower>();
 
 		lastMoveInput = Vector2.right;
     }
@@ -70,45 +60,15 @@ public class Movement : MonoBehaviour
 		StartCoroutine(DashSequence);
 	}
 
-	public void OnThrow(InputValue value)
-	{
-		aimInput = value.Get<Vector2>();
-	}
-
 	private void FixedUpdate()
 	{
 		// if there is no ongoing dash, move
 		if (DashSequence == null) DoMovement();
-		DoAim();
 	}
 
-	void DoAim()
+	public void SetSlow(bool set)
 	{
-		// if there is no aim input...
-		if (aimInput.magnitude < AimCutoff)
-		{
-			// if there is movement, use that (hide the reticle)
-			if (moveInput != Vector2.zero)
-			{
-				lookVector.x = moveInput.y;
-				lookVector.y = moveInput.x;
-			}
-			// otherwise maintain our aim as the last input. Do hide the reticle tho
-			//reticlePivot.gameObject.SetActive(false);
-			
-			_thrower.ReleaseAim();
-		}
-		else
-		{
-			lookVector = aimInput;
-			reticlePivot.gameObject.SetActive(true);
-			_thrower.AddTimeAimed(Time.deltaTime);
-		}
-
-		// rotate the reticle to point in the aim direction
-		inputRotation = Quaternion.Euler(Vector3.forward * (Mathf.Atan2(lookVector.y, lookVector.x) * Mathf.Rad2Deg));
-		reticlePivot.transform.rotation = inputRotation;
-		_thrower.SetRotation(inputRotation);
+		currentSpeed = set ? slowedSpeed : maxSpeed;
 	}
 
 	void DoMovement()

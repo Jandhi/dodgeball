@@ -18,7 +18,10 @@ public class ThrowPointer : MonoBehaviour
     {
         _square = transform.FindLogged("Square");
         _triangle = transform.FindLogged("Triangle");
-    }
+
+		// stow away the arrow onstart
+		Stretch(0);
+	}
 
     public void Stretch(float percent)
     {
