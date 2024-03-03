@@ -112,6 +112,61 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""Logitech Left"",
+                    ""id"": ""7ca11fc9-9424-4ce9-b020-315e11f87b3f"",
+                    ""path"": ""2DVector(mode=2)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""77bc3410-5e90-4226-b220-86dbdbdad784"",
+                    ""path"": ""<HID::Logitech Logitech Dual Action>/hat/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gameplay Control Scheme"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""bc183805-2cb8-49fa-a9c0-bd6981a073f0"",
+                    ""path"": ""<HID::Logitech Logitech Dual Action>/hat/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gameplay Control Scheme"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""7a5738c8-f9ed-45f3-9a37-be32082a3af7"",
+                    ""path"": ""<HID::Logitech Logitech Dual Action>/hat/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gameplay Control Scheme"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""66e7872d-60a1-42af-bae9-1606ca0856dc"",
+                    ""path"": ""<HID::Logitech Logitech Dual Action>/hat/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gameplay Control Scheme"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": ""Right Stick"",
                     ""id"": ""01ea6514-a92f-4fc8-a600-f5536557e9a0"",
                     ""path"": ""2DVector(mode=2)"",
@@ -167,12 +222,78 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""Logitech Right"",
+                    ""id"": ""7ccc9187-293c-42ce-87ac-6b0c674ee67b"",
+                    ""path"": ""2DVector(mode=2)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Throw"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""786fc8d9-1471-45b2-b1b4-58aed7df4b10"",
+                    ""path"": ""<HID::Logitech Logitech Dual Action>/stick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gameplay Control Scheme"",
+                    ""action"": ""Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""8a530893-bee3-43ab-ac59-dce0fd73ed13"",
+                    ""path"": ""<HID::Logitech Logitech Dual Action>/stick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gameplay Control Scheme"",
+                    ""action"": ""Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""160c6088-fb4e-4efe-895a-d592f5749259"",
+                    ""path"": ""<HID::Logitech Logitech Dual Action>/stick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gameplay Control Scheme"",
+                    ""action"": ""Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""23af7c1c-125e-4cee-964d-e81d78b893fc"",
+                    ""path"": ""<HID::Logitech Logitech Dual Action>/stick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gameplay Control Scheme"",
+                    ""action"": ""Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""13393ffb-66de-4715-ae93-22f14bd1e358"",
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2661cfe6-a8f7-4d59-92d6-814aa15984cd"",
+                    ""path"": ""<HID::Logitech Logitech Dual Action>/button6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gameplay Control Scheme"",
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -188,6 +309,36 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""devicePath"": ""<XInputController>"",
                     ""isOptional"": true,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<SwitchProControllerHID>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<WebGLGamepad>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<DualShockGamepad>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<AndroidGamepad>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<HID::Logitech Logitech Dual Action>"",
+                    ""isOptional"": false,
                     ""isOR"": false
                 }
             ]
