@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Core.Scripts.Utils;
 using UnityEngine;
 
 public class Pickup : MonoBehaviour
@@ -8,12 +9,17 @@ public class Pickup : MonoBehaviour
     public GameObject InHands;
     private Spawnable _spawnable;
     private bool _triggered = false;
+    private SpriteRenderer _image;
     
     // Start is called before the first frame update
     void Start()
     {
         _spawnable = GetComponent<Spawnable>();
         _triggered = false;
+        _image = transform.FindLogged("Sprite").FindLogged("Image").GetComponent<SpriteRenderer>();
+        var inhandsRenderer = InHands.transform.FindLogged("Sprite").GetComponent<SpriteRenderer>();
+        _image.sprite = inhandsRenderer.sprite;
+        _image.transform.localScale = inhandsRenderer.transform.localScale;
     }
 
     // Update is called once per frame

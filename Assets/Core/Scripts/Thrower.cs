@@ -3,14 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using Core.Scripts.Utils;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Thrower : MonoBehaviour
+public class Thrower : SerializedMonoBehaviour
 {
     [Header("Throw Settings")] 
-    [SerializeField] float minForce;
-    [SerializeField] float maxForce;
+    [SerializeField] private Dictionary<Weight, float> minForces;
+    [SerializeField] private Dictionary<Weight, float> maxForces;
     [SerializeField] float timeToFullCharge;
     [SerializeField] private AnimationCurve chargeCurve;
 
@@ -97,7 +98,7 @@ public class Thrower : MonoBehaviour
         if(throwable is null) return;
         
         var percent = chargeCurve.Evaluate(timeAimed > timeToFullCharge ? 1f : timeAimed / timeToFullCharge);
-        var force = Mathf.Lerp(minForce, maxForce, percent);
+        var force = Mathf.Lerp(minForces[throwable.Weight], maxForces[throwable.Weight], percent);
         var directionVector = -1 * lookVector.normalized;
         
         throwable.Throw(force * directionVector, transform.position + (directionVector * throwable.SpawnDistance).WithZ(0), gameObject);

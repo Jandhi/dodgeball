@@ -99,6 +99,11 @@ public class GameManager : Singleton<GameManager>
 	public void UpdateItemStatus(GameObject old, GameObject newStatus)
 	{
 		int index = items.IndexOf(old);
+		if (index == -1)
+		{
+			items.Add(old);
+			return;
+		}
 		items[index] = newStatus;
 	}
 

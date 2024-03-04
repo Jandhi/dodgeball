@@ -10,6 +10,12 @@ public class Throwable : MonoBehaviour
     public float SpawnDistance;
     [SerializeField] private GameObject projectilePrefab;
     public bool IsDone = false;
+    public Weight Weight;
+
+    public void Start()
+    {
+	    Weight = projectilePrefab.GetComponent<BaseProjectile>().Weight;
+    }
 
     public void Throw(Vector2 force, Vector3 position, GameObject owner)
     {

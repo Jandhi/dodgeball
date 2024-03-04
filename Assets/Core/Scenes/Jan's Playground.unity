@@ -123,6 +123,67 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &174385666
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 346034134867126931, guid: 5c600cf08702042e18a9f725a573a90c, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5834457937024597674, guid: 5c600cf08702042e18a9f725a573a90c, type: 3}
+      propertyPath: testPlayerCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942142814756990857, guid: 5c600cf08702042e18a9f725a573a90c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942142814756990857, guid: 5c600cf08702042e18a9f725a573a90c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942142814756990857, guid: 5c600cf08702042e18a9f725a573a90c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942142814756990857, guid: 5c600cf08702042e18a9f725a573a90c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942142814756990857, guid: 5c600cf08702042e18a9f725a573a90c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942142814756990857, guid: 5c600cf08702042e18a9f725a573a90c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942142814756990857, guid: 5c600cf08702042e18a9f725a573a90c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942142814756990857, guid: 5c600cf08702042e18a9f725a573a90c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942142814756990857, guid: 5c600cf08702042e18a9f725a573a90c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942142814756990857, guid: 5c600cf08702042e18a9f725a573a90c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5c600cf08702042e18a9f725a573a90c, type: 3}
 --- !u!1001 &306235495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -766,6 +827,54 @@ PrefabInstance:
       propertyPath: minForce
       value: 250
       objectReference: {fileID: 0}
+    - target: {fileID: 2603011552829858868, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 2603011552829858868, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
+    - target: {fileID: 2603011552829858868, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603011552829858868, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[0]
+      value: '"path":"maxForces","value":{"$id":0,"$type":"System.Collections.Generic.Dictionary`2[[Weight,
+        Assembly-CSharp],[System.Single, mscorlib]], mscorlib","comparer":{"$id":1,"$type":"System.Collections.Generic.EnumEqualityComparer`1[[Weight,
+        Assembly-CSharp]], mscorlib","$rlength":0,"$rcontent":[]},"$rlength":3,"$rcontent":[{"$k":0,"$v":1000},{"$k":1,"$v":3000},{"$k":2,"$v":10000}]}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603011552829858868, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[1]
+      value: '"path":"maxForces.{0es}","value":{"$id":0,"$type":"System.Single, mscorlib",1000}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603011552829858868, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[2]
+      value: '"path":"maxForces.{1es}","value":{"$id":0,"$type":"System.Single, mscorlib",3000}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603011552829858868, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[3]
+      value: '"path":"maxForces.{2es}","value":{"$id":0,"$type":"System.Single, mscorlib",10000}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603011552829858868, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[4]
+      value: '"path":"minForces","value":{"$id":0,"$type":"System.Collections.Generic.Dictionary`2[[Weight,
+        Assembly-CSharp],[System.Single, mscorlib]], mscorlib","comparer":{"$id":1,"$type":"System.Collections.Generic.EnumEqualityComparer`1[[Weight,
+        Assembly-CSharp]], mscorlib","$rlength":0,"$rcontent":[]},"$rlength":3,"$rcontent":[{"$k":1,"$v":500},{"$k":2,"$v":1000},{"$k":0,"$v":250}]}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603011552829858868, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[5]
+      value: '"path":"minForces.{0es}","value":{"$id":0,"$type":"System.Single, mscorlib",250}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603011552829858868, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[6]
+      value: '"path":"minForces.{1es}","value":{"$id":0,"$type":"System.Single, mscorlib",500}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603011552829858868, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[7]
+      value: '"path":"minForces.{2es}","value":{"$id":0,"$type":"System.Single, mscorlib",1000}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603011552829858868, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6956645678473780846, guid: acf4987494ee20b4082755e848ff4a1e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1056,6 +1165,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pickup (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7250733410002554734, guid: 65890427c81bd480d9f79850a489a57e, type: 3}
+      propertyPath: InHands
+      value: 
+      objectReference: {fileID: 5581763183194633194, guid: f308b338efaed4025baeb569e56cced9, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1190,3 +1303,4 @@ SceneRoots:
   - {fileID: 1308604489}
   - {fileID: 1329631535}
   - {fileID: 6376815694797870814}
+  - {fileID: 174385666}
