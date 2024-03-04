@@ -44,7 +44,7 @@ public class Movement : MonoBehaviour
 		afterImage = GetComponentInChildren<ParticleSystem>();
 
 		reticlePivot = transform.FindLogged("ReticlePivot");
-		_spriteR = gameObject.GetComponent<SpriteRenderer>();
+		_spriteR = gameObject.GetComponentInChildren<SpriteRenderer>();
 		_thrower = GetComponent<Thrower>();
 		_carrier = GetComponent<Carrier>();
 
@@ -76,9 +76,6 @@ public class Movement : MonoBehaviour
 
 	public void OnCatch()
     {
-        Debug.Log("OnCatch");
-        // set catching bool to be true, in catching mode can't dash ; can only catch when you have empty hands
-
         bool emptyHands = _carrier.Throwable is null;
         if (emptyHands) 
         {
