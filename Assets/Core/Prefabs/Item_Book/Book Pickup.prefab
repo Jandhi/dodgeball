@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 7250733410002554734}
   - component: {fileID: 5359202612997431326}
   m_Layer: 0
-  m_Name: Pickup
+  m_Name: Book Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -218,12 +218,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.46654257, y: 1.7678514}
-      - {x: -0.95105654, y: 1.0477093}
-      - {x: -0.953098, y: -1.2242932}
-      - {x: -0.48086914, y: -1.421354}
-      - {x: 0.96685123, y: -0.5660259}
-      - {x: 0.9704957, y: 1.4753735}
+    - - {x: 0.25644034, y: 1.4899743}
+      - {x: -1.344151, y: 0.56650746}
+      - {x: -1.3665252, y: -0.7159814}
+      - {x: -0.08099717, y: -1.4281316}
+      - {x: 1.4954954, y: -0.52536094}
+      - {x: 1.49914, y: 0.76373684}
   m_UseDelaunayMesh: 0
 --- !u!1 &6576009014680813902
 GameObject:

@@ -8,11 +8,13 @@ public class BaseProjectile : MonoBehaviour
 	public Weight Weight;
 	public int Damage;
 	public bool Catchable;
+	public float dangerVelocity;
 	
 	Rigidbody2D rb;
 	Collider2D col;
 	GameObject owner;
 	Collider2D[] ownerColliders;
+	bool becamePickup = false;
 
 	public void Throw(Vector2 force, GameObject _owner)
 	{
@@ -27,6 +29,17 @@ public class BaseProjectile : MonoBehaviour
 			Physics2D.IgnoreCollision(collider, col);
 		}
 		rb.AddForce(force);
+		StartCoroutine(TestVelocity());
+	}
+
+	IEnumerator TestVelocity()
+	{
+		while (rb.velocity.magnitude > dangerVelocity)
+		{
+			yield return null;
+		}
+
+		becamePickup = true;
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
