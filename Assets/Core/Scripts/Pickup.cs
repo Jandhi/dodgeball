@@ -40,5 +40,8 @@ public class Pickup : MonoBehaviour
         _spawnable.Despawn();
         inHands.GetComponent<Spawnable>().Spawn();
         carrier.Throwable = inHands.GetComponent<Throwable>();
+        
+        // update the status of this item, it's become a new gameobject
+        GameManager.Instance.UpdateItemStatus(gameObject, inHands);
     }
 }

@@ -25,7 +25,7 @@ public class Spawnable : MonoBehaviour
     IEnumerator Kill()
     {
         yield return new WaitForSeconds(Settings.DespawnDuration);
-        Destroy(this);
+        Destroy(gameObject);
         yield return null;
     }
 }

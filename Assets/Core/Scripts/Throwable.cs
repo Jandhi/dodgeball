@@ -14,8 +14,10 @@ public class Throwable : MonoBehaviour
     public void Throw(Vector2 force, Vector3 position, GameObject owner)
     {
         BaseProjectile ball = Instantiate(projectilePrefab, position, Quaternion.identity).GetComponent<BaseProjectile>();
-
         ball.Throw(force, owner);
+
+		GameManager.Instance.UpdateItemStatus(gameObject, ball.gameObject);
+
 
 		Destroy(gameObject);
 	}

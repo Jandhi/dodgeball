@@ -19,7 +19,7 @@ public class Despawn : MonoBehaviour
         yield return new WaitForSeconds(Lifetime);
         _spawnable.Despawn();
         yield return new WaitForSeconds(_spawnable.Settings.DespawnDuration);
-        Destroy(this.gameObject);
+        GameManager.Instance.DespawnMe(gameObject);
         yield return null;
     }
 }
