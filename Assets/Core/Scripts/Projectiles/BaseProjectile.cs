@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class BaseProjectile : MonoBehaviour
 {
+	public GameObject InHandsObject;
+	public Weight Weight;
+	public int Damage;
+	public bool Catchable;
+	
 	Rigidbody2D rb;
 	Collider2D col;
 	GameObject owner;
@@ -31,5 +36,9 @@ public class BaseProjectile : MonoBehaviour
 		{
 			Physics2D.IgnoreCollision(collider, col, false);
 		}
+		
+		OnProjectileCollision(collision);
 	}
+
+	public virtual void OnProjectileCollision(Collision2D collision) {}
 }

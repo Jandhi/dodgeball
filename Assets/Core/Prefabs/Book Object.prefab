@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8092606933043244298}
   - component: {fileID: -8759111299262354278}
   - component: {fileID: 7277713402596856503}
-  - component: {fileID: -8831239759100861951}
+  - component: {fileID: -8375853790054790039}
   m_Layer: 0
   m_Name: Book Object
   m_TagString: Untagged
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lifetime: 10
---- !u!114 &-8831239759100861951
+--- !u!114 &-8375853790054790039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -204,6 +204,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1212669605695433255}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c08c538815578b14e8d9d5acd03c6a69, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b97ed6394ad4878b17fb27010f24495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InHandsObject: {fileID: 5581763183194633194, guid: 315c1fc2ef2c34b46a7abdace4cb7b06, type: 3}
+  Weight: 1
+  Damage: 1
+  Catchable: 0
+  OnDeathParticles: {fileID: 3302247727818530849, guid: d65fa1b3de31640328916e4be1bf922f, type: 3}
