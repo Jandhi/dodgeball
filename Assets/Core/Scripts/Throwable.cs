@@ -24,7 +24,7 @@ public class Throwable : MonoBehaviour
 
 		GameManager.Instance.UpdateItemStatus(gameObject, ball.gameObject);
 
-
+		AudioManager.Instance.Throw.Play(position.x);
 		Destroy(gameObject);
 	}
 }
