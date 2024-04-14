@@ -32,21 +32,12 @@ public class Movement : MonoBehaviour
 	Vector2 moveInput, lastMoveInput, moveVector;
 	IEnumerator DashSequence;
 
-	bool catching;
-	private Carrier _carrier;
-	private SpriteRenderer _spriteR;
-
     // Start is called before the first frame update
     void Awake()
     {
 		rb = GetComponentInChildren<Rigidbody2D>();
 		currentSpeed = maxSpeed;
 		afterImage = GetComponentInChildren<ParticleSystem>();
-
-		reticlePivot = transform.FindLogged("ReticlePivot");
-		_spriteR = gameObject.GetComponentInChildren<SpriteRenderer>();
-		_thrower = GetComponent<Thrower>();
-		_carrier = GetComponent<Carrier>();
 
 		lastMoveInput = Vector2.right;
     }
@@ -68,20 +59,6 @@ public class Movement : MonoBehaviour
 		DashSequence = Dash();
 		StartCoroutine(DashSequence);
 	}
-
-	public void OnThrow(InputValue value)
-	{
-		aimInput = value.Get<Vector2>();
-	}
-
-	public void OnCatch()
-    {
-        bool emptyHands = _carrier.Throwable is null;
-        if (emptyHands) 
-        {
-			StartCoroutine(Catch());
-        }
-    }
 
 	private void FixedUpdate()
 	{
@@ -133,29 +110,4 @@ public class Movement : MonoBehaviour
 		// dash is now completed.
 		DashSequence = null;
 	}
-
-	IEnumerator Catch()
-	{
-		catching = true;
-		rb.drag = 40;
-		_spriteR.color = Color.red;
-
-		float time = 0;
-		while (time < 0.25)
-		{
-			time += Time.deltaTime;
-			yield return null;
-		}
-		_spriteR.color = Color.white;
-		catching = false;
-		rb.drag = 0;
-	}
-	void OnCollisionEnter2D(Collision2D collision)
-    {
-		Debug.Log(collision.gameObject);
-		if (catching)
-		{
-			// ball is caught and ownership goes to this player now
-		}
-    }
 }
