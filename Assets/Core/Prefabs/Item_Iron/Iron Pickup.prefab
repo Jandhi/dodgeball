@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 7250733410002554734}
   - component: {fileID: 5359202612997431326}
   m_Layer: 0
-  m_Name: Book Pickup
+  m_Name: Iron Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51eedb881ce645b68a053396ba45063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InHands: {fileID: 5581763183194633194, guid: a57289ca583614299ab08812680b3b6e, type: 3}
+  InHands: {fileID: 5581763183194633194, guid: 816aea533df414ff3bd9761b9768e2c7, type: 3}
 --- !u!60 &5359202612997431326
 PolygonCollider2D:
   m_ObjectHideFlags: 0

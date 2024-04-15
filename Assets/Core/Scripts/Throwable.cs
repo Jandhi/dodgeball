@@ -14,12 +14,12 @@ public class Throwable : MonoBehaviour
 
     public void Start()
     {
-	    Weight = projectilePrefab.GetComponent<BaseProjectile>().Weight;
+	    Weight = projectilePrefab.GetComponent<Projectile>().Weight;
     }
 
     public void Throw(Vector2 force, Vector3 position, GameObject owner)
     {
-        BaseProjectile ball = Instantiate(projectilePrefab, position, Quaternion.identity).GetComponent<BaseProjectile>();
+        Projectile ball = Instantiate(projectilePrefab, position, Quaternion.identity).GetComponent<Projectile>();
         ball.Throw(force, owner);
 
 		GameManager.Instance.UpdateItemStatus(gameObject, ball.gameObject);

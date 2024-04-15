@@ -52,6 +52,9 @@ MonoBehaviour:
   items: []
   itemTypes:
   - {fileID: 2260815979512015332, guid: 65890427c81bd480d9f79850a489a57e, type: 3}
+  - {fileID: 2260815979512015332, guid: 48be65e8fea934ec4b33176933a2791e, type: 3}
+  - {fileID: 2260815979512015332, guid: ca03d81cf6bda48da876c010e63af91c, type: 3}
+  - {fileID: 2260815979512015332, guid: 0149afccb952041319f2f22f906da59e, type: 3}
   maxItemsPerPlayer: 3
   waitTimeToSpawnItem: {x: 1, y: 5}
   testPlayerCount: 2

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8002199151302299209}
   - component: {fileID: 5560589231348684634}
   m_Layer: 0
-  m_Name: Iron Item
+  m_Name: Spoon Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,8 +60,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnDistance: 0.5
-  projectilePrefab: {fileID: 1212669605695433255, guid: f9b6c32196626477dbd27de75343c1db, type: 3}
+  projectilePrefab: {fileID: 1212669605695433255, guid: 456bbbb70f3244c6ca0e3aa84c4c7755, type: 3}
   IsDone: 0
+  Weight: 0
 --- !u!1 &6361641753259495424
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +136,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 34569f35f923f4f4f9078b69e8a521f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a0d83ca70dc9d42be84c8e5eac02347a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

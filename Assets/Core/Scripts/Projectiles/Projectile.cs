@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseProjectile : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
 	public GameObject InHandsObject;
 	public Weight Weight;
@@ -14,7 +15,19 @@ public class BaseProjectile : MonoBehaviour
 	GameObject owner;
 	Collider2D[] ownerColliders;
 
-	public void Throw(Vector2 force, GameObject _owner)
+	public delegate void ThrowHandler(Rigidbody2D rb);
+	public event ThrowHandler OnThrow;
+
+	public delegate void CollisionHandler(Collision2D collision);
+
+	public event CollisionHandler OnCollision;
+
+	private void OnDestroy()
+	{
+		GameManager.Instance.DespawnMe(gameObject);
+	}
+
+	public virtual void Throw(Vector2 force, GameObject _owner)
 	{
 		rb = GetComponent<Rigidbody2D>();
 		col = GetComponentInChildren<Collider2D>();
@@ -27,6 +40,8 @@ public class BaseProjectile : MonoBehaviour
 			Physics2D.IgnoreCollision(collider, col);
 		}
 		rb.AddForce(force);
+
+		OnThrow?.Invoke(rb);
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
@@ -37,8 +52,6 @@ public class BaseProjectile : MonoBehaviour
 			Physics2D.IgnoreCollision(collider, col, false);
 		}
 		
-		OnProjectileCollision(collision);
+		OnCollision?.Invoke(collision);
 	}
-
-	public virtual void OnProjectileCollision(Collision2D collision) {}
 }

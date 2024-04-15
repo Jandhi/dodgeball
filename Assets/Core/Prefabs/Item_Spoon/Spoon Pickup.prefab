@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 7250733410002554734}
   - component: {fileID: 5359202612997431326}
   m_Layer: 0
-  m_Name: Book Pickup
+  m_Name: Spoon Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51eedb881ce645b68a053396ba45063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InHands: {fileID: 5581763183194633194, guid: a57289ca583614299ab08812680b3b6e, type: 3}
+  InHands: {fileID: 5581763183194633194, guid: 12a9b1c892fa64284af78eaa8d67cf26, type: 3}
 --- !u!60 &5359202612997431326
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -251,8 +251,8 @@ Transform:
   m_GameObject: {fileID: 6576009014680813902}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.735, y: -0.356, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalPosition: {x: 0.769, y: -0.301, z: 0}
+  m_LocalScale: {x: 0.1823, y: 0.169975, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6631814085209273305}
@@ -298,7 +298,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ef4cb11dd4e244ff1a10eb6636014e74, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a0d83ca70dc9d42be84c8e5eac02347a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

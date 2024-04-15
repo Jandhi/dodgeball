@@ -8,6 +8,10 @@ public class Spawnable : MonoBehaviour
 {
     public SpawnableSettings Settings;
 
+    public delegate void DespawnHandler();
+
+    public event DespawnHandler OnDespawn;
+
     [Button]
     public void Spawn()
     {
@@ -19,6 +23,7 @@ public class Spawnable : MonoBehaviour
     public void Despawn()
     {
         Tween.LocalScale(transform, Vector3.zero, Settings.DespawnDuration, 0f, Settings.DespawnCurve);
+        OnDespawn?.Invoke();
         StartCoroutine(Kill());
     }
 

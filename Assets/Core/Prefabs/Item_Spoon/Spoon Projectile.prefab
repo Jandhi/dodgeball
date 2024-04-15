@@ -14,10 +14,10 @@ GameObject:
   - component: {fileID: 8092606933043244298}
   - component: {fileID: -8759111299262354278}
   - component: {fileID: 7277713402596856503}
-  - component: {fileID: -8375853790054790039}
-  - component: {fileID: -2168561871680924466}
+  - component: {fileID: -9058758802427224892}
+  - component: {fileID: -675971687374519923}
   m_Layer: 0
-  m_Name: Book Object
+  m_Name: Spoon Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.21, y: -0.18, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ef4cb11dd4e244ff1a10eb6636014e74, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a0d83ca70dc9d42be84c8e5eac02347a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -161,14 +161,22 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.95912564, y: -0.552309}
-      - {x: 0.9493705, y: 1.5048747}
-      - {x: 0.4722662, y: 1.8247311}
-      - {x: -0.97885895, y: 1.0427178}
-      - {x: -0.9667816, y: -0.3751077}
-      - {x: -0.9815686, y: -1.1787862}
-      - {x: -0.90034425, y: -1.3086703}
-      - {x: -0.48542738, y: -1.3835859}
+    - - {x: -0.7143126, y: -1.5227362}
+      - {x: -0.55408424, y: -1.7689903}
+      - {x: -0.28603506, y: -1.9828589}
+      - {x: -0.07407619, y: -1.9715476}
+      - {x: 0.13577984, y: -1.7776256}
+      - {x: 0.3042114, y: -1.5219765}
+      - {x: 0.3326579, y: -1.0058987}
+      - {x: 0.20686193, y: -0.80377513}
+      - {x: -0.039393544, y: -0.71173626}
+      - {x: 0.08510803, y: 1.8237289}
+      - {x: -0.22417825, y: 1.9338127}
+      - {x: -0.5173585, y: 1.7643356}
+      - {x: -0.3710261, y: -0.6603985}
+      - {x: -0.58719563, y: -0.7844137}
+      - {x: -0.69057244, y: -0.981425}
+      - {x: -0.72037137, y: -1.475886}
   m_UseDelaunayMesh: 0
 --- !u!114 &-8759111299262354278
 MonoBehaviour:
@@ -196,20 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lifetime: 10
---- !u!114 &-8375853790054790039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212669605695433255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b97ed6394ad4878b17fb27010f24495, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnDeathParticles: {fileID: 3302247727818530849, guid: 84411012f4e59492cb5275700de5db1d, type: 3}
---- !u!114 &-2168561871680924466
+--- !u!114 &-9058758802427224892
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,7 +216,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08c538815578b14e8d9d5acd03c6a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InHandsObject: {fileID: 5581763183194633194, guid: a57289ca583614299ab08812680b3b6e, type: 3}
+  InHandsObject: {fileID: 5581763183194633194, guid: 12a9b1c892fa64284af78eaa8d67cf26, type: 3}
   Weight: 0
   Damage: 1
   Catchable: 1
+--- !u!114 &-675971687374519923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212669605695433255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b0f9bbd97564d73a88919c48b4e29f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 25

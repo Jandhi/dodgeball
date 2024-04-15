@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8092606933043244298}
   - component: {fileID: -8759111299262354278}
   - component: {fileID: 7277713402596856503}
-  - component: {fileID: -2967779371564725061}
+  - component: {fileID: 8867252040003942491}
   m_Layer: 0
   m_Name: Iron Projectile
   m_TagString: Untagged
@@ -101,9 +101,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
-  m_LinearDrag: 3
-  m_AngularDrag: 0.1
+  m_Mass: 5
+  m_LinearDrag: 1
+  m_AngularDrag: 0.3
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: c80014eae4dcc4c6db4e785cc82b160d, type: 2}
   m_IncludeLayers:
@@ -160,22 +160,22 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.01752311, y: -1.6033598}
-      - {x: 0.61590445, y: -1.2412453}
-      - {x: 0.6074652, y: -0.95696115}
-      - {x: 1.0685022, y: -0.7626489}
-      - {x: 1.0542196, y: 0.44194087}
-      - {x: 0.6401755, y: 0.62770426}
-      - {x: 0.48468688, y: 0.552783}
-      - {x: 0.32092512, y: 0.82866085}
-      - {x: 0.049116254, y: 1.4207388}
-      - {x: -0.5710193, y: 1.5639098}
-      - {x: -0.90313643, y: 0.96699536}
-      - {x: -1.0490279, y: 0.17175353}
-      - {x: -1.0425041, y: -0.41717568}
-      - {x: -1.0488772, y: -0.960033}
-      - {x: -0.75731295, y: -1.1151574}
-      - {x: -0.42653245, y: -1.2910364}
+    - - {x: 0.09246606, y: -1.5572814}
+      - {x: 0.62602055, y: -1.2713307}
+      - {x: 0.52579975, y: -0.9997203}
+      - {x: 1.0827453, y: -0.7710203}
+      - {x: 1.0540015, y: 0.3946647}
+      - {x: 0.63827693, y: 0.6755328}
+      - {x: 0.43587494, y: 0.53493774}
+      - {x: 0.2538452, y: 1.053283}
+      - {x: -0.14583156, y: 1.5870016}
+      - {x: -0.6745653, y: 1.5942508}
+      - {x: -0.94627595, y: 1.1454124}
+      - {x: -1.0333457, y: 0.21446174}
+      - {x: -1.0766602, y: -0.55118}
+      - {x: -1.0626816, y: -0.9684332}
+      - {x: -0.8908345, y: -1.0709406}
+      - {x: -0.4664095, y: -1.2884943}
   m_UseDelaunayMesh: 0
 --- !u!114 &-8759111299262354278
 MonoBehaviour:
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lifetime: 10
---- !u!114 &-2967779371564725061
+--- !u!114 &8867252040003942491
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08c538815578b14e8d9d5acd03c6a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InHandsObject: {fileID: 5581763183194633194, guid: f308b338efaed4025baeb569e56cced9, type: 3}
+  InHandsObject: {fileID: 5581763183194633194, guid: 816aea533df414ff3bd9761b9768e2c7, type: 3}
   Weight: 1
   Damage: 2
   Catchable: 0
