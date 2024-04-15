@@ -5,9 +5,11 @@ using UnityEngine;
 public class Catcher : MonoBehaviour
 {
     bool catching;
+    private BaseProjectile caughtProjectile;
 	private Carrier _carrier;
 	private SpriteRenderer _spriteR;
     private Movement _movement;
+    
 
     void Awake()
     {
@@ -17,9 +19,8 @@ public class Catcher : MonoBehaviour
     }
     public void OnCatch()
     {
-        Debug.Log(_spriteR);
-        bool emptyHands = _carrier.Throwable is null;
-        if (emptyHands) 
+        bool holdingThrowable = _carrier.Throwable;
+        if (!holdingThrowable)
         {
 			StartCoroutine(Catch());
         }
@@ -43,10 +44,17 @@ public class Catcher : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D collision)
     {
-		Debug.Log(collision.gameObject);
-		if (catching)
+        caughtProjectile = collision.gameObject.GetComponent<BaseProjectile>();
+        Debug.Log(caughtProjectile);
+		if (catching & caughtProjectile.Catchable)
 		{
-			// ball is caught and ownership goes to this player now
+			OnSuccessfulCatch();
 		}
+    }
+
+    public void OnSuccessfulCatch()
+    {
+        // Do something
+        Debug.Log("YOU CAUGHT SOMETHINHG");
     }
 }

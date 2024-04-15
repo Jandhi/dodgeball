@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 5935094283087878368}
   - component: {fileID: 8092606933043244298}
   - component: {fileID: -8759111299262354278}
-  - component: {fileID: 7277713402596856503}
-  - component: {fileID: 8867252040003942491}
+  - component: {fileID: -8375853790054790039}
   m_Layer: 0
   m_Name: Iron Projectile
   m_TagString: Untagged
@@ -32,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.21, y: -0.18, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -190,20 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Settings: {fileID: 11400000, guid: b1c7dc6ce898b46ffad3decf831c7bc7, type: 2}
---- !u!114 &7277713402596856503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212669605695433255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 623f8dca85c9042c08f0db9be63670cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lifetime: 10
---- !u!114 &8867252040003942491
+--- !u!114 &-8375853790054790039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
